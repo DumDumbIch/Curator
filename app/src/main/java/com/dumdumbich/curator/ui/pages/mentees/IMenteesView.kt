@@ -1,9 +1,10 @@
 package com.dumdumbich.curator.ui.pages.mentees
 
 import moxy.MvpView
-import moxy.viewstate.strategy.alias.AddToEndSingle
+import moxy.viewstate.strategy.AddToEndSingleStrategy
+import moxy.viewstate.strategy.StateStrategyType
 
-@AddToEndSingle
+@StateStrategyType(AddToEndSingleStrategy::class)
 interface IMenteesView : MvpView {
     fun init()
     fun updateList()
