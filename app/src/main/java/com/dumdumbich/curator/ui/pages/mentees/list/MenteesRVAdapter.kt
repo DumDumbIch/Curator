@@ -2,14 +2,12 @@ package com.dumdumbich.curator.ui.pages.mentees.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.dumdumbich.curator.data.image.IImageLoader
 import com.dumdumbich.curator.databinding.FragmentMenteesItemBinding
 
 class MenteesRVAdapter(
     private val presenter: IMenteesListPresenter,
-    val imageLoader: IImageLoader<ImageView>
+//    val imageLoader: IImageLoader<ImageView>
 ) :
     RecyclerView.Adapter<MenteesRVAdapter.ViewHolder>() {
 
@@ -37,7 +35,7 @@ class MenteesRVAdapter(
         override var pos = -1
 
         override fun setName(text: String) = with(ui) {
-            tvName.text = text
+            tvMenteeName.text = text
         }
 
 //        override fun loadLogo(url: String)  = with(ui) {

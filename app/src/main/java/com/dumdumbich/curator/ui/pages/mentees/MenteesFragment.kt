@@ -1,16 +1,15 @@
 package com.dumdumbich.curator.ui.pages.mentees
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dumdumbich.curator.databinding.FragmentMenteesBinding
 import com.dumdumbich.curator.ui.App
-import com.dumdumbich.curator.ui.navigator.AndroidScreens
+import com.dumdumbich.curator.ui.LOG_D_TAG
 import com.dumdumbich.curator.ui.navigator.IBackClickListener
 import com.dumdumbich.curator.ui.pages.mentees.list.MenteesRVAdapter
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 
@@ -21,11 +20,9 @@ class MenteesFragment : MvpAppCompatFragment(), IMenteesView, IBackClickListener
     }
 
     private val presenter by moxyPresenter {
-        MenteesPresenter(
-            App.instance.router,
-            AndroidScreens(),
-            AndroidSchedulers.mainThread()
-        )
+        MenteesPresenter().apply {
+            App.instance.initMenteesSubcomponent().inject(this)
+        }
     }
 
     private var ui: FragmentMenteesBinding? = null
@@ -35,8 +32,9 @@ class MenteesFragment : MvpAppCompatFragment(), IMenteesView, IBackClickListener
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? = FragmentMenteesBinding.inflate(inflater, container, false).also {
+    ) = FragmentMenteesBinding.inflate(inflater, container, false).also {
         ui = it
+        Log.d(LOG_D_TAG, "MenteesFragment(): onCreateView()")
     }.root
 
     override fun onDestroyView() {
@@ -45,14 +43,19 @@ class MenteesFragment : MvpAppCompatFragment(), IMenteesView, IBackClickListener
     }
 
     override fun init() {
-        ui?.rvMentees?.layoutManager=LinearLayoutManager(requireContext())
-        adapter= MenteesRVAdapter(presenter.menteesListPresenter)
+        Log.d(LOG_D_TAG, "MenteesFragment(): init()")
+        ui?.rvMentees?.layoutManager = LinearLayoutManager(requireContext())
+        adapter = MenteesRVAdapter(presenter.menteesListPresenter).apply {
+            App.instance.appComponent.menteesSubcomponent().inject(this)
+        }
+        ui?.rvMentees?.adapter = adapter
     }
 
     override fun updateList() {
+        Log.d(LOG_D_TAG, "MenteesFragment(): updateList()")
         adapter?.notifyDataSetChanged()
     }
 
-    override fun isBackPressed(): Boolean  = presenter.backClick()
-    }
+    override fun isBackPressed(): Boolean = presenter.backClick()
+
 }
