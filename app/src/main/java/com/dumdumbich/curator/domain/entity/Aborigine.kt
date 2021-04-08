@@ -4,6 +4,6 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Mentee(
-    var contactInfo: CompanyContactInfo
+data class Aborigine(
+    var contactInfo: PersonalContactInfo
 ) : Parcelable
