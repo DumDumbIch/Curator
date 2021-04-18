@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="btn_add_like">Классно</string>
+    <string name="btn_dis_like">Хрень какая</string>
+    <string name="about_activity">Кто мы…</string>
+    <string name="tv_goto_full_description">Перейти к подробному описанию</string>
+    <string name="tv_short_description">Это приложение - рабочий журнал и набор инструментов для инженера сервисной службы \nАвтор: Дмитрий Лебедев \ndumdumbich@gmail.com
+    \nДля отправки отзыва нажмите наиболее подходящую кнопку)</string>
+    <string name="developer_email">dumdumbich@gmail.com</string>
+    <string name="email_subject_feedback">Отзыв клиента о приложении Куратор (Curator)</string>
+    <string name="select_email_client_message">Выбор почтового клиента</string>
+    <string name="feedback_template_like">Здорово! Мне понравилось. Но есть замечания/предложения…</string>
+    <string name="feedback_template_dislike">Приложение не понравилось. Не устраивает дизайн/интерфейс/информационное наполнение…</string>
+</resources>
