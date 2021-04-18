@@ -1,6 +1,6 @@
 package com.dumdumbich.curator.ui.pages.mentee
 
-import com.dumdumbich.curator.domain.entity.Mentee
+import com.dumdumbich.curator.domain.entity.hero.Mentee
 import com.github.terrakok.cicerone.Router
 import moxy.MvpPresenter
 import javax.inject.Inject
