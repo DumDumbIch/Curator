@@ -1,5 +1,6 @@
 package com.dumdumbich.curator.di.scope.main
 
+import com.dumdumbich.curator.di.scope.about.AboutSubcomponent
 import com.dumdumbich.curator.di.scope.main.module.AppModule
 import com.dumdumbich.curator.di.scope.main.module.NavigationModule
 import com.dumdumbich.curator.di.scope.main.module.SchedulerModule
@@ -23,6 +24,7 @@ import dagger.Component
 interface AppComponent {
 
     fun menteesSubcomponent(): MenteesSubcomponent
+    fun aboutSubcomponent(): AboutSubcomponent
     fun inject(mainActivity: MainActivity)
     fun inject(mainPresenter: MainPresenter)
 

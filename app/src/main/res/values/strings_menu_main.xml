@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mi_main_screen">Home</string>
+    <string name="mi_database">Database</string>
+    <string name="mi_settings">Settings</string>
+    <string name="mi_about">About…</string>
+</resources>

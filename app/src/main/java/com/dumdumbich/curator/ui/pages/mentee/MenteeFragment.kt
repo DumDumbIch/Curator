@@ -1,18 +1,18 @@
 package com.dumdumbich.curator.ui.pages.mentee
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.dumdumbich.curator.databinding.FragmentMenteeBinding
-import com.dumdumbich.curator.domain.entity.Mentee
+import com.dumdumbich.curator.domain.entity.hero.Mentee
 import com.dumdumbich.curator.ui.App
-import com.dumdumbich.curator.ui.LOG_D_TAG
 import com.dumdumbich.curator.ui.navigator.IBackClickListener
+import com.dumdumbich.curator.utils.debug.DEBUG_MenteeFragment
+import com.dumdumbich.curator.utils.debug.IDebug
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 
-class MenteeFragment : MvpAppCompatFragment(), IMenteeView, IBackClickListener {
+class MenteeFragment : MvpAppCompatFragment(), IMenteeView, IBackClickListener, IDebug {
 
     companion object {
         private const val MENTEE_ARG = "mentee"
@@ -40,7 +40,7 @@ class MenteeFragment : MvpAppCompatFragment(), IMenteeView, IBackClickListener {
     ) =
         FragmentMenteeBinding.inflate(inflater, container, false).also {
             ui = it
-            Log.d(LOG_D_TAG, "MenteeFragment(): onCreateView()")
+            debugMessage(DEBUG_MenteeFragment, "MenteeFragment(): onCreateView()")
         }.root
 
     override fun onDestroyView() {

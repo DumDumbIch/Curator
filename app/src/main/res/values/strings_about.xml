@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="btn_add_like">Add Like</string>
+    <string name="btn_dis_like">Dis Like</string>
+    <string name="about_activity">About…</string>
+    <string name="tv_goto_full_description">Go to full description</string>
+    <string name="tv_short_description">This application is a service engineer work log and tool kit .
+        \nAuthor: Dmitry Lebedev \ndumdumbich@gmail.com
+    \nTo send feedback to the developer, click the appropriate button.</string>
+    <string name="developer_email">dumdumbich@gmail.com</string>
+    <string name="email_subject_feedback">Feedback from Curator application</string>
+    <string name="select_email_client_message">Select of email client application…</string>
+    <string name="feedback_template_like">It\'s wow!</string>
+    <string name="feedback_template_dislike">It\'s complete nonsense!</string>
+</resources>

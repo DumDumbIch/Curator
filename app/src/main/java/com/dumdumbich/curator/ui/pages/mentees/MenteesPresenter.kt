@@ -1,20 +1,20 @@
 package com.dumdumbich.curator.ui.pages.mentees
 
-import android.util.Log
 import com.dumdumbich.curator.di.scope.mentees.IMenteesScopeContainer
-import com.dumdumbich.curator.domain.entity.Mentee
+import com.dumdumbich.curator.domain.entity.hero.Mentee
 import com.dumdumbich.curator.domain.interactor.IMenteesInteractor
-import com.dumdumbich.curator.ui.LOG_D_TAG
 import com.dumdumbich.curator.ui.navigator.IScreens
 import com.dumdumbich.curator.ui.pages.mentees.list.IMenteeItemView
 import com.dumdumbich.curator.ui.pages.mentees.list.IMenteesListPresenter
+import com.dumdumbich.curator.utils.debug.DEBUG_MenteesPresenter
+import com.dumdumbich.curator.utils.debug.IDebug
 import com.github.terrakok.cicerone.Router
 import io.reactivex.rxjava3.core.Scheduler
 import moxy.MvpPresenter
 import javax.inject.Inject
 import javax.inject.Named
 
-class MenteesPresenter : MvpPresenter<IMenteesView>() {
+class MenteesPresenter : MvpPresenter<IMenteesView>(), IDebug {
 
     @Inject
     lateinit var menteesScopeContainer: IMenteesScopeContainer
@@ -52,13 +52,13 @@ class MenteesPresenter : MvpPresenter<IMenteesView>() {
     val menteesListPresenter = MenteesListPresenter()
 
     override fun onFirstViewAttach() {
-        Log.d(LOG_D_TAG, "MenteesPresenter(): onFirstViewAttach()")
+        debugMessage(DEBUG_MenteesPresenter, "MenteesPresenter(): onFirstViewAttach()")
         super.onFirstViewAttach()
         viewState.init()
         loadData()
         menteesListPresenter.itemClickListener = { itemView ->
-            Log.d(
-                LOG_D_TAG,
+            debugMessage(
+                DEBUG_MenteesPresenter,
                 "MenteesPresenter(): onFirstViewAttach() - menteesListPresenter.itemClickListener"
             )
             val mentee = menteesListPresenter.mentees[itemView.pos]
@@ -67,18 +67,24 @@ class MenteesPresenter : MvpPresenter<IMenteesView>() {
     }
 
     private fun loadData() {
-        Log.d(LOG_D_TAG, "MenteesPresenter(): loadData()")
+        debugMessage(DEBUG_MenteesPresenter, "MenteesPresenter(): loadData()")
         menteesListPresenter.mentees.clear()
         interactor.getMentees()
             .observeOn(uiScheduler)
             .subscribe(
                 { mentee ->
-                    Log.d(LOG_D_TAG, "MenteesPresenter(): loadData() - subscribe success")
+                    debugMessage(
+                        DEBUG_MenteesPresenter,
+                        "MenteesPresenter(): loadData() - subscribe success"
+                    )
                     menteesListPresenter.mentees.addAll(mentee)
                     viewState.updateList()
                 },
                 { error ->
-                    Log.d(LOG_D_TAG, "MenteesPresenter(): loadData() - subscribe error")
+                    debugMessage(
+                        DEBUG_MenteesPresenter,
+                        "MenteesPresenter(): loadData() - subscribe error"
+                    )
                     error.printStackTrace()
                 }
             )
