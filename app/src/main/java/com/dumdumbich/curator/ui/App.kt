@@ -1,17 +1,18 @@
 package com.dumdumbich.curator.ui
 
 import android.app.Application
-import android.util.Log
+import com.dumdumbich.curator.di.scope.about.AboutSubcomponent
+import com.dumdumbich.curator.di.scope.about.IAboutScopeContainer
 import com.dumdumbich.curator.di.scope.main.AppComponent
 import com.dumdumbich.curator.di.scope.main.DaggerAppComponent
 import com.dumdumbich.curator.di.scope.main.module.AppModule
 import com.dumdumbich.curator.di.scope.mentees.IMenteesScopeContainer
 import com.dumdumbich.curator.di.scope.mentees.MenteesSubcomponent
+import com.dumdumbich.curator.utils.debug.DEBUG_App
+import com.dumdumbich.curator.utils.debug.IDebug
 
 
-const val LOG_D_TAG = "DUMDUMBICH_CURATOR"
-
-class App : Application(), IMenteesScopeContainer {
+class App : Application(), IMenteesScopeContainer, IAboutScopeContainer, IDebug {
 
     companion object {
         lateinit var instance: App
@@ -22,9 +23,12 @@ class App : Application(), IMenteesScopeContainer {
     var menteesSubcomponent: MenteesSubcomponent? = null
         private set
 
+    var aboutSubcomponent: AboutSubcomponent? = null
+        private set
+
 
     override fun onCreate() {
-        Log.d(LOG_D_TAG, "App(): onCreate()")
+        debugMessage(DEBUG_App, "App(): onCreate()")
         super.onCreate()
         instance = this
 
@@ -39,6 +43,14 @@ class App : Application(), IMenteesScopeContainer {
 
     override fun releaseMenteesScope() {
         menteesSubcomponent = null
+    }
+
+    fun initAboutSubcomponent() = appComponent.aboutSubcomponent().also {
+        aboutSubcomponent = it
+    }
+
+    override fun releaseAboutScope() {
+        aboutSubcomponent = null
     }
 
 }
