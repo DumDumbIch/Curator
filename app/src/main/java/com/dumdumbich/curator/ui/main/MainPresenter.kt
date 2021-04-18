@@ -19,7 +19,15 @@ class MainPresenter : MvpPresenter<IMainView>() {
         router.replaceScreen(screens.mentees())
     }
 
-    fun backClicked() {
+    fun toHomePage() {
+        router.newRootScreen(screens.mentees())
+    }
+
+    fun toAboutPage() {
+        router.navigateTo(screens.about())
+    }
+
+    fun closeApplication() {
         router.exit()
     }
 
