@@ -16,6 +16,7 @@ import moxy.MvpAppCompatActivity
 import moxy.ktx.moxyPresenter
 import javax.inject.Inject
 
+
 class MainActivity : MvpAppCompatActivity(), IMainView, IDebug {
 
     @Inject
@@ -51,17 +52,17 @@ class MainActivity : MvpAppCompatActivity(), IMainView, IDebug {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
+        menuInflater.inflate(R.menu.menu_options_main, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         var result = true
         when (item.itemId) {
-            R.id.mi_main_screen -> { presenter.toHomePage()}
-            R.id.mi_database -> {}
-            R.id.mi_settings -> {}
-            R.id.mi_about -> { presenter.toAboutPage() }
+            R.id.mi_main_home -> presenter.toHomePage()
+//            R.id.mi_settings ->
+            R.id.mi_main_about -> presenter.toAboutPage()
+            R.id.mi_main_tables -> presenter.toTablesPage()
             else -> result = false
         }
         return result
