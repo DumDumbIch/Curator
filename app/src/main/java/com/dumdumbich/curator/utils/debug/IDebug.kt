@@ -2,6 +2,7 @@ package com.dumdumbich.curator.utils.debug
 
 import android.util.Log
 
+
 const val DEBUG_TAG = "DUMDUMBICH_CURATOR"
 
 const val DEBUG_App: Boolean = false
@@ -14,7 +15,11 @@ const val DEBUG_MenteesFragment: Boolean = false
 const val DEBUG_MenteesPresenter: Boolean = false
 const val DEBUG_MenteesInteractor: Boolean = false
 
-const val DEBUG_AboutFragment: Boolean = true
+const val DEBUG_AboutFragment: Boolean = false
+
+const val DEBUG_TablesInteractor: Boolean = true
+const val DEBUG_TablesPresenter: Boolean = true
+const val DEBUG_TablesFragment: Boolean = true
 
 
 interface IDebug {
