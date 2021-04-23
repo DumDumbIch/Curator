@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="mi_main_screen">Домой</string>
-    <string name="mi_database">База данных</string>
-    <string name="mi_settings">Настройки</string>
-    <string name="mi_about">Визитка</string>
+    <string name="mi_main_home">Домой</string>
+    <string name="mi_main_tables">База данных</string>
+    <string name="mi_main_settings">Настройки</string>
+    <string name="mi_main_about">Визитка</string>
 </resources>
