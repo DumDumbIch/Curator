@@ -17,7 +17,7 @@ class MenteePresenter(
         viewState.setMenteeName(mentee.contactInfo.name)
     }
 
-    fun backClick(): Boolean {
+    fun closeScreen(): Boolean {
         router.exit()
         return true
     }

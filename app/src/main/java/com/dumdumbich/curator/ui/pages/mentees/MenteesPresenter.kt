@@ -90,7 +90,7 @@ class MenteesPresenter : MvpPresenter<IMenteesView>(), IDebug {
             )
     }
 
-    fun backClick(): Boolean {
+    fun closeScreen(): Boolean {
         router.exit()
         return true
     }

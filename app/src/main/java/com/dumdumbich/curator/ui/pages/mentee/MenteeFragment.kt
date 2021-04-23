@@ -52,6 +52,6 @@ class MenteeFragment : MvpAppCompatFragment(), IMenteeView, IBackClickListener, 
         ui?.tvMenteeName?.text = text
     }
 
-    override fun isBackPressed(): Boolean = presenter.backClick()
+    override fun isBackPressed(): Boolean = presenter.closeScreen()
 
 }
