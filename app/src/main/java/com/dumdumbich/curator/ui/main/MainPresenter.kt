@@ -5,6 +5,7 @@ import com.github.terrakok.cicerone.Router
 import moxy.MvpPresenter
 import javax.inject.Inject
 
+
 class MainPresenter : MvpPresenter<IMainView>() {
 
     @Inject
@@ -25,6 +26,10 @@ class MainPresenter : MvpPresenter<IMainView>() {
 
     fun toAboutPage() {
         router.navigateTo(screens.about())
+    }
+
+    fun toTablesPage() {
+        router.navigateTo(screens.tables())
     }
 
     fun closeApplication() {
