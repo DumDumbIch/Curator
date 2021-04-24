@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mi_tables_add">Добавить…</string>
+    <string name="mi_tables_delete">Удалить…</string>
+    <string name="mi_tables_edit">Редактировать…</string>
+    <string name="mi_tables_update">Обновить…</string>
+</resources>

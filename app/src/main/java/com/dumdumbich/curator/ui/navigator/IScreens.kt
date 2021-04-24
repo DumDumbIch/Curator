@@ -7,4 +7,5 @@ interface IScreens {
     fun mentees(): Screen
     fun mentee(mentee: Mentee): Screen
     fun about(): Screen
+    fun tables(): Screen
 }

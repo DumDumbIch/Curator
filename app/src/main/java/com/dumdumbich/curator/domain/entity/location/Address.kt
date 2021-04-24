@@ -6,5 +6,8 @@ data class Address(
     val settlement: String,
     val street: String,
     val number: Int,
-    val letter: String
+    val letter: String,
+    val flat: Int,
+    val room: Int,
+    val coordinates: Coordinates
 )
