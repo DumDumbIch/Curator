@@ -1,11 +1,11 @@
-package com.dumdumbich.curator.data.db.room.entity
+package com.dumdumbich.curator.data.db.room.coordinate
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 
 @Entity
-class CoordinatesEntity(
+class CoordinateEntity(
     @PrimaryKey val id: String,
     val latitude: String,
     val longitude: String

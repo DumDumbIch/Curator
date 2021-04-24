@@ -1,7 +1,10 @@
-package com.dumdumbich.curator.data.db.room.entity
+package com.dumdumbich.curator.data.db.room.mentee
 
 import androidx.room.Entity
 import androidx.room.ForeignKey
+import com.dumdumbich.curator.data.db.room.company.CompanyEntity
+import com.dumdumbich.curator.data.db.room.curator.CuratorEntity
+import com.dumdumbich.curator.data.db.room.aborigine.AborigineEntity
 
 
 @Entity(

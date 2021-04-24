@@ -21,6 +21,8 @@ const val DEBUG_TablesInteractor: Boolean = true
 const val DEBUG_TablesPresenter: Boolean = true
 const val DEBUG_TablesFragment: Boolean = true
 
+const val DEBUG_Database_Room: Boolean = true
+
 
 interface IDebug {
     fun debugMessage(flag: Boolean, message: String) {
