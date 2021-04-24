@@ -1,14 +1,15 @@
-package com.dumdumbich.curator.data.db.room.entity
+package com.dumdumbich.curator.data.db.room.address
 
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
+import com.dumdumbich.curator.data.db.room.coordinate.CoordinateEntity
 
 
 @Entity(
     foreignKeys = [
         ForeignKey(
-            entity = CoordinatesEntity::class,
+            entity = CoordinateEntity::class,
             parentColumns = ["id"],
             childColumns = ["coordinatesId"],
             onDelete = ForeignKey.CASCADE

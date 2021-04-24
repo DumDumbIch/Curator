@@ -1,4 +1,4 @@
-package com.dumdumbich.curator.data.db.room.entity
+package com.dumdumbich.curator.data.db.room.personal
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
