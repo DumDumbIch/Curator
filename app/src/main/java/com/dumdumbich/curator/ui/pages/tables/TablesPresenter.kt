@@ -3,32 +3,18 @@ package com.dumdumbich.curator.ui.pages.tables
 import com.dumdumbich.curator.di.scope.tables.ITablesScopeContainer
 import com.dumdumbich.curator.domain.entity.database.Table
 import com.dumdumbich.curator.domain.interactor.ITablesInteractor
-import com.dumdumbich.curator.ui.navigator.IScreens
+import com.dumdumbich.curator.ui.pages.PagePresenter
 import com.dumdumbich.curator.ui.pages.tables.list.ITableItemView
 import com.dumdumbich.curator.ui.pages.tables.list.ITablesListPresenter
 import com.dumdumbich.curator.utils.debug.DEBUG_TablesPresenter
 import com.dumdumbich.curator.utils.debug.IDebug
-import com.github.terrakok.cicerone.Router
-import io.reactivex.rxjava3.core.Scheduler
-import moxy.MvpPresenter
 import javax.inject.Inject
-import javax.inject.Named
 
 
-class TablesPresenter : MvpPresenter<ITablesView>(), IDebug {
+class TablesPresenter : PagePresenter<ITablesView>() {
 
     @Inject
     lateinit var tablesScopeContainer: ITablesScopeContainer
-
-    @field:Named("ui")
-    @Inject
-    lateinit var uiScheduler: Scheduler
-
-    @Inject
-    lateinit var router: Router
-
-    @Inject
-    lateinit var screens: IScreens
 
     @Inject
     lateinit var interactor: ITablesInteractor
@@ -47,20 +33,32 @@ class TablesPresenter : MvpPresenter<ITablesView>(), IDebug {
 
         override fun getCount(): Int = tables.size
 
-        fun itemAdd(){
-            debugMessage(DEBUG_TablesPresenter, "TablesPresenter : TablesListPresenter(): itemAdd()")
+        fun itemAdd() {
+            debugMessage(
+                DEBUG_TablesPresenter,
+                "TablesPresenter : TablesListPresenter(): itemAdd()"
+            )
         }
 
-        fun itemDelete(){
-            debugMessage(DEBUG_TablesPresenter, "TablesPresenter : TablesListPresenter(): itemDelete()")
+        fun itemDelete() {
+            debugMessage(
+                DEBUG_TablesPresenter,
+                "TablesPresenter : TablesListPresenter(): itemDelete()"
+            )
         }
 
-        fun itemEdit(){
-            debugMessage(DEBUG_TablesPresenter, "TablesPresenter : TablesListPresenter(): itemEdit()")
+        fun itemEdit() {
+            debugMessage(
+                DEBUG_TablesPresenter,
+                "TablesPresenter : TablesListPresenter(): itemEdit()"
+            )
         }
 
-        fun itemUpdate(){
-            debugMessage(DEBUG_TablesPresenter, "TablesPresenter : TablesListPresenter(): itemUpdate()")
+        fun itemUpdate() {
+            debugMessage(
+                DEBUG_TablesPresenter,
+                "TablesPresenter : TablesListPresenter(): itemUpdate()"
+            )
         }
 
     }
@@ -109,26 +107,20 @@ class TablesPresenter : MvpPresenter<ITablesView>(), IDebug {
         super.onDestroy()
     }
 
-    fun closeScreen(): Boolean {
-        router.exit()
-        return true
-    }
-
-    fun itemAdd(){
+    fun itemAdd() {
         tablesListPresenter.itemAdd()
     }
 
-    fun itemDelete(){
+    fun itemDelete() {
         tablesListPresenter.itemDelete()
     }
 
-    fun itemEdit(){
+    fun itemEdit() {
         tablesListPresenter.itemEdit()
     }
 
-    fun itemUpdate(){
+    fun itemUpdate() {
         tablesListPresenter.itemUpdate()
     }
-
 
 }

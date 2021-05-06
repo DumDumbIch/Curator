@@ -1,4 +1,7 @@
 package com.dumdumbich.curator.ui.pages.table
 
-class TablePresenter {
+import com.dumdumbich.curator.ui.pages.PagePresenter
+
+
+class TablePresenter : PagePresenter<ITableView>() {
 }

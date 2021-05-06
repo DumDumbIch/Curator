@@ -1,25 +1,15 @@
 package com.dumdumbich.curator.ui.pages.mentee
 
 import com.dumdumbich.curator.domain.entity.hero.Mentee
-import com.github.terrakok.cicerone.Router
-import moxy.MvpPresenter
-import javax.inject.Inject
+import com.dumdumbich.curator.ui.pages.PagePresenter
 
 class MenteePresenter(
     private val mentee: Mentee
-) : MvpPresenter<IMenteeView>() {
-
-    @Inject
-    lateinit var router: Router
+) : PagePresenter<IMenteeView>() {
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
         viewState.setMenteeName(mentee.contactInfo.name)
-    }
-
-    fun closeScreen(): Boolean {
-        router.exit()
-        return true
     }
 
 }
