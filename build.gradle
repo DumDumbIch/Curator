@@ -4,12 +4,13 @@ buildscript {
         kotlin_version = "1.4.32"
         moxy_version = "2.2.1"
         retrofit_version = "2.9.0"
-        room_version = "2.2.6"
+        room_version = "2.3.0"
         dagger_version = "2.31.2"
     }
     repositories {
         google()
         mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.2.0'
@@ -24,6 +25,7 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        jcenter()
     }
 }
 
