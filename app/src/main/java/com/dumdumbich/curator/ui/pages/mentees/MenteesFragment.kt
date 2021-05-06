@@ -6,14 +6,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dumdumbich.curator.databinding.FragmentMenteesBinding
 import com.dumdumbich.curator.ui.App
-import com.dumdumbich.curator.ui.navigator.IBackClickListener
+import com.dumdumbich.curator.ui.pages.PageFragment
 import com.dumdumbich.curator.ui.pages.mentees.list.MenteesRVAdapter
 import com.dumdumbich.curator.utils.debug.DEBUG_MenteesFragment
-import com.dumdumbich.curator.utils.debug.IDebug
-import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 
-class MenteesFragment : MvpAppCompatFragment(), IMenteesView, IBackClickListener, IDebug {
+
+class MenteesFragment : PageFragment(), IMenteesView {
 
     companion object {
         fun newInstance() = MenteesFragment()
