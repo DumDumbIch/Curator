@@ -2,6 +2,7 @@ package com.dumdumbich.curator.di.scope.main
 
 import com.dumdumbich.curator.di.scope.about.AboutSubcomponent
 import com.dumdumbich.curator.di.scope.main.module.AppModule
+import com.dumdumbich.curator.di.scope.main.module.DriverModule
 import com.dumdumbich.curator.di.scope.main.module.NavigationModule
 import com.dumdumbich.curator.di.scope.main.module.SchedulerModule
 import com.dumdumbich.curator.di.scope.mentees.MenteesSubcomponent
@@ -19,7 +20,8 @@ import dagger.Component
         NavigationModule::class,
 //        NetworkModule::class,
 //        ResourceModule::class,
-        SchedulerModule::class
+        SchedulerModule::class,
+        DriverModule::class
     ]
 )
 interface AppComponent {

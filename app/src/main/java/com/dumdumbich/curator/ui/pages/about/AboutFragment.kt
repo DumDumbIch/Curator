@@ -1,6 +1,5 @@
 package com.dumdumbich.curator.ui.pages.about
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -39,15 +38,13 @@ class AboutFragment : MvpAppCompatFragment(), IAboutView, IBackClickListener, ID
     override fun init() {
         ui?.btnAddLike?.setOnClickListener {
             debugMessage(DEBUG_AboutFragment, "AboutFragment(): init() btnAddLike.setOnClickListener()")
-            val intent = presenter.sendFeedBack(getString(R.string.feedback_template_like))
-            startActivity(Intent.createChooser(intent, getString(R.string.select_email_client_message)))
             presenter.closeScreen()
+            presenter.sendFeedBack(getString(R.string.feedback_template_like))
         }
         ui?.btnDisLike?.setOnClickListener {
             debugMessage(DEBUG_AboutFragment, "AboutFragment(): init() btnDisLike.setOnClickListener()")
-            val intent = presenter.sendFeedBack(getString(R.string.feedback_template_dislike))
-            startActivity(Intent.createChooser(intent, getString(R.string.select_email_client_message)))
             presenter.closeScreen()
+            presenter.sendFeedBack(getString(R.string.feedback_template_dislike))
         }
     }
 
