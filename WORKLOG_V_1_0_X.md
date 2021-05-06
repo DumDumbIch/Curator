@@ -1,19 +1,27 @@
 NEED_TO_RATE tickets:
 
+================================================================================
 TO_DO tickets:
-240421-01: UI - (таблицы Aborigine,Curator,Mentee)
-
+240421-01: UI - таблица Aborigine
+240421-02: UI - таблица Curator
+240421-03: UI - таблица Mentee
+================================================================================
 IN_WORK tickets:
-230421-01: Внедрение Room (таблицы Coordinate,Address,Personal,Curator,Aborigine,Company,Mentee)
 
+================================================================================
 CHECK tickets:
 
+================================================================================
 DONE tickets:
+240421/230421-01: Внедрение Room (таблицы Coordinate,Address,Personal,Curator,Aborigine,Company,Mentee)
+================================================================================
 
+
+25/04/2021
 
 
 24/04/2021
-
+DONE: 230421-01: Внедрение Room (таблицы Coordinate,Address,Personal,Curator,Aborigine,Company,Mentee)
 
 23/04/2021
 На данный момент реализован скелет программы MVP/Moxy - DI/Dagger2 - Navigation/Cicerone.
