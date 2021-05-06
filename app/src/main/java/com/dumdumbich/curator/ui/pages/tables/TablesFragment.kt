@@ -6,15 +6,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.dumdumbich.curator.R
 import com.dumdumbich.curator.databinding.FragmentTablesBinding
 import com.dumdumbich.curator.ui.App
-import com.dumdumbich.curator.ui.navigator.IBackClickListener
+import com.dumdumbich.curator.ui.pages.PageFragment
 import com.dumdumbich.curator.ui.pages.tables.list.TablesRVAdapter
 import com.dumdumbich.curator.utils.debug.DEBUG_TablesFragment
-import com.dumdumbich.curator.utils.debug.IDebug
-import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 
 
-class TablesFragment : MvpAppCompatFragment(), ITablesView, IBackClickListener, IDebug {
+class TablesFragment : PageFragment(), ITablesView {
 
     companion object {
         fun newInstance() = TablesFragment()
