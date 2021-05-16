@@ -15,10 +15,13 @@ CHECK tickets:
 DONE tickets:
 240421/230421-01: Внедрение Room (таблицы Coordinate,Address,Personal,Curator,Aborigine,Company,Mentee)
 ================================================================================
+16/05/2021
+10 мая Moxy 2.2.2 переехала в MavenCentral
+Из build gradle projects убрал ссылку на jcenter(), moxy_version=2.2.2
 
-
-25/04/2021
-
+06/05/2021
+Приведение в соответсвие с чистой архитектурой сценарий "Отправка отзыва" - убрал из презентера низкоуровневое обращение к операционной системе (Intent)
+Оптимизация кода в слое ui.pages (вынес общий код страниц в абстрактные классы)
 
 24/04/2021
 DONE: 230421-01: Внедрение Room (таблицы Coordinate,Address,Personal,Curator,Aborigine,Company,Mentee)
